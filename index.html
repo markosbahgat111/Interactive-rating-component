@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+		<title>Frontend Mentor | Interactive rating component</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+			*{
+				font-family: "Overpass";
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				box-sizing: border-box;
+				background-color: hsl(216, 12%, 2%);
+			}
+			.review_container{
+				position: absolute;
+				max-width: 400px;
+				max-height: 400px;
+				width: 90%;
+				height: 50%;
+				background: linear-gradient(135deg,  hsl(213, 26%, 18%),  hsl(215, 31%, 15%), hsl(216, 70%, 8%));
+				margin: auto;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+				border-radius: 25px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				box-sizing: border-box;
+				padding: 2em;
+
+			}
+			.thanks_container{
+				position: absolute;
+				max-width: 400px;
+				max-height: 400px;
+				width: 90%;
+				height: 50%;
+				background: linear-gradient(135deg,  hsl(213, 26%, 18%),  hsl(215, 31%, 15%), hsl(216, 70%, 8%));
+				margin: auto;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				border-radius: 25px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				box-sizing: border-box;
+				padding: 2em;
+				text-align: center;
+
+			}
+			.second_container {
+				margin: auto;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			.second_container ul{
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				list-style: none;
+				align-content: center;
+				margin:30px 0;
+
+			}
+			.second_container ul li{
+				list-style: none;
+				background-color:  hsla(215, 23%, 37%, 0.397);
+				width: 50px;
+				height: 50px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				cursor: pointer;
+				color: hsl(0, 0%, 100%);
+				font-size: 16px;
+				font-weight: 700;
+
+			}
+
+			.second_container ul li:hover{
+				background-color: hsl(217, 12%, 63%);
+			}
+			.second_container ul li:focus{
+				background-color: hsl(25, 97%, 53%);
+			}
+			.second_container button{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 45px;
+				border-radius: 50px;
+				border: none;
+				color:white;
+				background-color: hsl(25, 97%, 53%);
+				cursor: pointer;
+				font-size: 18px;
+				text-transform: uppercase;
+				font-weight: 700;
+				letter-spacing: 1px;
+			}
+			.second_container button:hover{
+				color: hsl(25, 97%, 53%);
+				background-color: white;
+			}
+			h2{
+				color: white;
+				letter-spacing: 1px;
+				margin-top: 1.5em;
+				margin-bottom: 0.3em;
+			}
+			span {
+				color: rgba(250, 245, 245, 0.397);
+				font-size: 15px;
+			}
+			.star_icon{
+				display: block;
+				padding: 0.8em;
+				background-color: hsla(216, 14%, 38%, 0.5);
+				border-radius: 50%;
+			}
+			.thanks_container header{
+				color: hsl(25, 97%, 53%);
+				background-color: hsla(215, 23%, 37%, 0.397);
+				border-radius: 50px;
+				width: 60%;
+				height: 35px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 2em auto;
+			}
+			h2.thank_you{
+				color: white;
+				margin-bottom: 0.5em;
+				font-size: 30px;
+			}
+			@media screen and (max-width:786px) {
+				.review_container, .thanks_container{
+					height: fit-content;
+				}
+				.thanks_container header{
+				color: hsl(25, 97%, 53%);
+				background-color: hsla(215, 23%, 37%, 0.397);
+				border-radius: 50px;
+				width: fit-content;
+				height: 35px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 2em auto;
+				white-space: nowrap;
+				padding: 0 1em;
+			}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="review_container" id="review_container">
+			<div>
+				<img src="./images/icon-star.svg" class="star_icon"/>
+				<h2>How did we do?</h2>
+				<span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam sequi eveniet, autem quisquam,</span>
+			</div>
+			<div class="second_container">
+				<ul>
+					<li tabindex="1" onclick="handleInput(event)">1</li>
+					<li tabindex="1" onclick="handleInput(event)">2</li>
+					<li tabindex="1" onclick="handleInput(event)">3</li>
+					<li tabindex="1" onclick="handleInput(event)">4</li>
+					<li tabindex="1" onclick="handleInput(event)">5</li>
+				</ul>
+				<button tabindex="1" onclick="handleClick()">Submit</button>
+			</div>
+		</div>
+		<div class="thanks_container" id="container">
+			<div>
+				<img src="./images/illustration-thank-you.svg"/>
+				<header></header>
+			</div>
+			<h2 class="thank_you">Thank You!</h2>
+			<span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam sequi eveniet, autem quisquam,</span>
+		</div>
+		<script>
+			const ThanksSection = document.getElementById("container");
+			const reviewSection = document.getElementById("review_container");
+			const header = document.querySelector("header");
+			ThanksSection.style.display = "none"
+			const handleClick = () => {
+				reviewSection.style.display = "none";
+				ThanksSection.style.display = "block";
+				if (!header.textContent) header.textContent = "You selected 0 out of 5";
+				
+			}
+			const handleInput = (e) => {
+				header.textContent = "You selected " + e.target.textContent + " out of 5";
+			}
+		</script>
+	</body>
+</html>
